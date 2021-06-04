@@ -41,8 +41,8 @@ public class Film implements Serializable {
 	@Column(name = "id_film", nullable = false)
 	private Integer id;
 
-	@Column(name = "nom", nullable = false, length = 255)
-	private String nom;
+	@Column(name = "titre", nullable = false, length = 255)
+	private String titre;
 
 	@Column(name = "annee", nullable = false)
 	private LocalDate annee;

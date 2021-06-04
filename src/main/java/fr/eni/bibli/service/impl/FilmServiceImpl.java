@@ -1,5 +1,7 @@
 package fr.eni.bibli.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import fr.eni.bibli.entite.Film;
@@ -9,7 +11,6 @@ import fr.eni.bibli.service.dao.FilmDao;
 @Service
 public class FilmServiceImpl implements FilmService {
 
-	
 	// =======================================================
 	// ATTRIBUTS
 	// =======================================================
@@ -27,7 +28,13 @@ public class FilmServiceImpl implements FilmService {
 	// MÉTHODES PUBLIQUES
 	// =======================================================
 
+	@Override
 	public Film find(Integer idFilm) {
 		return filmDao.findById(idFilm).get();
+	}
+
+	@Override
+	public List<Film> findAll() {
+		return filmDao.findAll();
 	}
 }

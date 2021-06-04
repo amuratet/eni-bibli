@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Liste des films</title>
+</head>
+<body>
+	<h1>Ma liste de film</h1>
+	<div>
+		<div th:each="film:${films}">
+			<p th:text="${film.titre}"></p>
+			<p th:text="${film.annee}"></p>
+			<p th:text="${film.duree}"></p>
+			<p th:text="${film.synopsis}"></p>
+		</div>
+	</div>
+</body>
+</html>
