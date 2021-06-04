@@ -45,8 +45,8 @@ public class Genre implements Serializable {
 	@Column(name = "libelle", nullable = false)
 	private String libelle;
 
-	@Builder.Default
-	@OneToMany(mappedBy = "film", fetch = FetchType.LAZY)
-	private List<Film> films = new ArrayList<Film>();
+//	@Builder.Default
+//	@OneToMany(mappedBy = "film", fetch = FetchType.LAZY)
+//	private List<Film> films = new ArrayList<Film>();
 
 }
