@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.eni.bibli.entite.Film;
 import fr.eni.bibli.service.FilmService;
@@ -35,23 +35,20 @@ public class FilmController {
 	// =======================================================
 
 	@GetMapping
-	@ResponseBody
 	public String accueil() {
-		return "accueil.html";
+		return "accueil";
 	}
 
 	@GetMapping("detail")
-	@ResponseBody
 	public String detail(Integer id) {
-		return "detail.html";
+		return "detail";
 	}
 
 	@GetMapping("liste")
-	@ResponseBody
 	public String liste(Model model) {
 		List<Film> films = filmService.findAll();
 		model.addAttribute("films", films);
-		return "liste.html";
+		return "liste";
 	}
 
 }

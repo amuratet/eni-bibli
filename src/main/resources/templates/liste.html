@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Liste des films</title>
@@ -8,7 +8,8 @@
 	<h1>Ma liste de film</h1>
 	<div>
 		<div th:each="film:${films}">
-			<p th:text="${film.titre}"></p>
+			<p><a href="" th:text="${film.titre}"></a></p>
+<!-- 			th:href="@{http://localhost:8080/gtvg/order/details(orderId=${o.id})}" -->
 			<p th:text="${film.annee}"></p>
 			<p th:text="${film.duree}"></p>
 			<p th:text="${film.synopsis}"></p>
