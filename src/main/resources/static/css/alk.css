@@ -2,6 +2,36 @@ body {
 	background-color: #eeeeee;
 }
 
+/* NAVBAR */
+a.notrelogo img {
+	width: 11em;
+	border-radius: .5em;
+	border: 1px solid rgba(100, 100, 100, .5);
+	margin: 1em 0 0 10em;
+}
+a.connexionIcones {
+	padding: 0 !important;
+	margin: 2.8em 1.5em 0 0;
+}
+a.connexionIcones:hover {
+	background-color: rgba(100, 100, 100, 0);
+}
+a.connexionIcones img {
+	transition: .6s;
+	width: 4em;
+	padding: .5em;
+/* 	margin: 2.2em 2em 0 0; */
+	border-radius: .5em;
+	background-color: rgba(255, 255, 255, 0);
+	border: 2px solid rgba(0, 0, 0, 0);
+}
+a.connexionIcones img:hover {
+	transition: .3s;
+	background-color: rgba(255, 255, 255, .3);
+	border: 2px solid rgba(0, 0, 0, .7);
+}
+
+
 .souligne {
 	width: 50%;
 	padding: 1px;
@@ -9,8 +39,22 @@ body {
 	background: linear-gradient(to right, #eeeeee, #4527a0 5%, #4527a0 40%, #dddddd, #eeeeee);
 }
 
-.menuBurger {
+/* MENU HAMBURGER */
+a.menuBurger {
+	transition: .8s !important;
+	display: inline-block;
 	margin: 2em;
+	padding: .9em 1em .7em 1em;
 	position: sticky;
 	top: 2em;
+	background: linear-gradient(to bottom right, rgba(200, 200, 200, .5), rgba(100, 100, 100, .5));
+	border-radius: 50%;
+	border: 3px solid rgba(170, 0, 255, .4);
+}
+a.menuBurger:hover {
+	transition: .4s !important;
+	border: 3px solid rgba(170, 0, 255, .9);
+}
+a.menuBurger img {
+	width: 2em;
 }
