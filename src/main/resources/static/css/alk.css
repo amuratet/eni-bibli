@@ -1,0 +1,16 @@
+body {
+	background-color: #eeeeee;
+}
+
+.souligne {
+	width: 50%;
+	padding: 1px;
+	margin-bottom: 2em;
+	background: linear-gradient(to right, #eeeeee, #4527a0 5%, #4527a0 40%, #dddddd, #eeeeee);
+}
+
+.menuBurger {
+	margin: 2em;
+	position: sticky;
+	top: 2em;
+}

@@ -2,18 +2,139 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<title>Starter Template - Materialize</title>
+
+<!-- CSS  -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="css/alk.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
 <title>Liste des films</title>
 </head>
+
 <body>
-	<h1>Ma liste de film</h1>
-	<div>
-		<div th:each="film:${films}">
-			<p><a href="" th:text="${film.titre}"></a></p>
-<!-- 			th:href="@{http://localhost:8080/gtvg/order/details(orderId=${o.id})}" -->
-			<p th:text="${film.annee}"></p>
-			<p th:text="${film.duree}"></p>
-			<p th:text="${film.synopsis}"></p>
+
+	<!-- NAVBAR -->
+	<nav class="deep-purple darken-3" style="height: 7em;">
+		<div class="nav-wrapper container">
+			<a id="logo-container" href="#" class="brand-logo"><img src="icons/notreLogo.jpg" alt="se connecter" width="200" style="margin-top: .5em; border-radius: .2em;" /></a>
+			<ul class="right hide-on-med-and-down">
+			<!-- SI MEMBRE OU ADMIN -->
+				<li><a href="#"><img src="icons/enter.png" alt="se connecter" width="50" style="margin-top: 3em; margin-left: 1em;" /></a></li>
+			<!-- SI MEMBRE OU ADMIN -->
+				<li><a href="#"><img src="icons/logout.png" alt="se déconnecter" width="50" style="margin-top: 3em; margin-left: 1em;" /></a></li>
+			<!-- SI MEMBRE OU ADMIN -->
+				<li><a href="#"><img src="icons/add-user.png" alt="s'inscrire" width="50" style="margin-top: 3em; margin-left: 1em;" /></a></li>
+			</ul>
 		</div>
+	</nav>
+	
+	
+
+
+  <ul id="slide-out" class="sidenav">
+    <li>
+	    <div class="user-view">
+	    	<a href="#user"><img src="icons/notreLogo.jpg" width="200" style="border-radius: .5em;"></a>
+	    </div>
+    </li>
+    <li><a href="#!"><i class="material-icons">people</i>Qui nous sommes</a></li>
+    <li><a href="#!"><i class="material-icons">person</i>Qui je suis</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Nos engagements :</a></li>
+    <li><a href="#!"><i class="material-icons">phone</i>À votre écoute</a></li>
+    <li><a href="#!"><i class="material-icons">smoke_free</i>Ne fumez pas</a></li>
+    <li><a href="#!"><i class="material-icons">spa</i>Mangez des fleurs</a></li>
+    <li><a href="#!"><i class="material-icons">blur_circular</i></a></li>
+  </ul>
+	<div class="menuBurger">
+  		<a href="#" data-target="slide-out" class="sidenav-trigger"><img src="icons/list.png" alt="menu" width="50" /></a>
 	</div>
+
+	<div class="carousel">
+		<a class="carousel-item" href="#one!"><img src="img/deLorean.jpg">Retour vers le futur</a>
+		<a class="carousel-item" href="#three!"><img src="img/fightClub.jpg">Fight Club</a>
+		<a class="carousel-item" href="#two!"><img src="img/forestGump.jpg">Forest Gump</a>
+		<a class="carousel-item" href="#four!"><img src="img/pulpFiction.jpg">Pulp Fiction</a>
+		<a class="carousel-item" href="#one!"><img src="img/starWars.jpg">L'Empire contre-attaque</a>
+		<a class="carousel-item" href="#two!"><img src="img/anneau.jpg">Le Seigneur des Anneaux</a>
+		<a class="carousel-item" href="#three!"><img src="img/batman.jpg">The Dark Knight</a>
+		<a class="carousel-item" href="#four!"><img src="img/bladeRunner.jpg">Blade Runner</a>
+		<a class="carousel-item" href="#five!"><img	src="img/interstellar.jpg">Interstellar</a>
+		<a class="carousel-item" href="#five!"><img	src="img/godfather.jpg">Le Parrain</a>
+	</div>
+
+	<div class="container">
+		<h1>Liste des films</h1>
+		<div class="souligne"></div>
+
+		<ul class="collapsible" th:each="film:${films}">
+			<li>
+				<div class="collapsible-header">
+					<i class="material-icons">local_movies</i><span th:text="${film.titre}"></span> <span
+						class="badge" th:text="${film.annee.year}"
+						style="display: inline-block; background-color: #88ddff; border-radius: .2em; color: #113377;"></span>
+				</div>
+				<div class="collapsible-body">
+					<p>
+						<span th:text="${film.duree}"></span> minutes
+					</p>
+					<p th:text="${film.synopsis}">Lorem ipsum</p>
+					<!-- SI MEMBRE OU ADMIN -->
+					<a href="#"><i class="Medium material-icons">mode_edit</i></a>
+				</div>
+			</li>
+		</ul>
+		<ul class="pagination">
+			<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+			<li class="active"><a href="#!">1</a></li>
+			<li class="waves-effect"><a href="#!">2</a></li>
+			<li class="waves-effect"><a href="#!">3</a></li>
+			<li class="waves-effect"><a href="#!">4</a></li>
+			<li class="waves-effect"><a href="#!">5</a></li>
+			<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+		</ul>
+	</div>
+
+	<footer class="page-footer grey darken-4">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Uswap inc.</h5>
+				</div>
+
+				<div class="col l3 s12">
+					<h5 class="white-text">©ENI</h5>
+				</div>
+				<div class="col l3 s12">
+					<h5 class="white-text">GroupeFBO</h5>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				Déveulopped by les non-binaires <a class="orange-text text-lighten-3" href="#">Amilcar & Lewis</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<!--  Scripts-->
+	<script src="js/materialize.js"></script>
+	<script src="js/init.js"></script>
+
+	<script>
+		M.AutoInit();
+
+	</script>
 </body>
 </html>
