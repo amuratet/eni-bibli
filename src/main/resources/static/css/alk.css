@@ -4,9 +4,9 @@ body {
 
 /* NAVBAR */
 a.notrelogo img {
-	width: 11em;
+	width: 13em;
 	border-radius: .5em;
-	border: 1px solid rgba(100, 100, 100, .5);
+/* 	border: 1px solid rgba(100, 100, 100, .5); */
 	margin: 1em 0 0 10em;
 }
 a.connexionIcones {
@@ -31,9 +31,17 @@ a.connexionIcones img:hover {
 	border: 2px solid rgba(0, 0, 0, .7);
 }
 
-
+.souligneEtAjoute {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+.souligneEtAjoute i {
+	font-size: 3em;
+}
 .souligne {
 	width: 50%;
+	height: 2px;
 	padding: 1px;
 	margin-bottom: 2em;
 	background: linear-gradient(to right, #eeeeee, #4527a0 5%, #4527a0 40%, #dddddd, #eeeeee);
@@ -49,11 +57,11 @@ a.menuBurger {
 	top: 2em;
 	background: linear-gradient(to bottom right, rgba(200, 200, 200, .5), rgba(100, 100, 100, .5));
 	border-radius: 50%;
-	border: 3px solid rgba(170, 0, 255, .4);
+	border: 3px solid rgba(69, 39, 160, .4);
 }
 a.menuBurger:hover {
 	transition: .4s !important;
-	border: 3px solid rgba(170, 0, 255, .9);
+	border: 3px solid rgba(69, 39, 160, .9);
 }
 a.menuBurger img {
 	width: 2em;

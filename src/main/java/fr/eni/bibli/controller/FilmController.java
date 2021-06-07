@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -12,7 +13,7 @@ import fr.eni.bibli.entite.Film;
 import fr.eni.bibli.service.FilmService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class FilmController {
 
 	// =======================================================
@@ -34,17 +35,21 @@ public class FilmController {
 	// MÉTHODES PUBLIQUES
 	// =======================================================
 
-	@GetMapping
+	@GetMapping("/")
 	public String accueil() {
 		return "accueil";
 	}
 
-	@GetMapping("detail")
-	public String detail(Integer id) {
+	@GetMapping("/detail/{id}")
+	public String detail(@PathVariable Integer id, Model model) {
+		System.err.println("l'id vaut : " + id);
+		Film film = filmService.find(id);
+		model.addAttribute("film", film);
+		System.err.println(film);
 		return "detail";
 	}
 
-	@GetMapping("liste")
+	@GetMapping("/liste")
 	public String liste(Model model) {
 		List<Film> films = filmService.findAll();
 		model.addAttribute("films", films);

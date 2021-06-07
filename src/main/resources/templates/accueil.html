@@ -6,7 +6,8 @@
 </head>
 <body>
 	<h1> Bonjour </h1>
-	<p><a href="/detail?id=1" th:href="@{/detail(id=1)}"> Détail du film</a></p>
+	<p><a href="/detail/1" th:href="@{/detail/1}"> Détail du film</a></p>
+<!-- 	<a th:href="@{'/pathvars/single/' + ${item.id}}"> -->
 	<p><a href="/liste" th:href="@{/liste}"> Liste des films</a></p>
 </body>
 </html>

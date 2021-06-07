@@ -26,7 +26,7 @@
 	<!-- NAVBAR -->
 	<nav class="deep-purple darken-3" style="height: 7em;">
 		<div class="nav-wrapper">
-			<a href="#" class="notrelogo"><img src="icons/notreLogo.jpg" alt="logo" /></a>
+			<a href="#" class="notrelogo"><img src="icons/notreLogo2.jpg" alt="logo" /></a>
 			<ul class="right hide-on-med-and-down">
 			<!-- SI MEMBRE OU ADMIN -->
 				<li><a href="#" class="connexionIcones"><img src="icons/enter.png" alt="se connecter" /></a></li>
@@ -61,28 +61,31 @@
 <!-- 	</div> -->
 
 	<div class="carousel">
-		<a class="carousel-item" href="#one!"><img src="img/deLorean.jpg">Retour vers le futur</a>
-		<a class="carousel-item" href="#three!"><img src="img/fightClub.jpg">Fight Club</a>
-		<a class="carousel-item" href="#two!"><img src="img/forestGump.jpg">Forest Gump</a>
-		<a class="carousel-item" href="#four!"><img src="img/pulpFiction.jpg">Pulp Fiction</a>
-		<a class="carousel-item" href="#one!"><img src="img/starWars.jpg">L'Empire contre-attaque</a>
-		<a class="carousel-item" href="#two!"><img src="img/anneau.jpg">Le Seigneur des Anneaux</a>
-		<a class="carousel-item" href="#three!"><img src="img/batman.jpg">The Dark Knight</a>
-		<a class="carousel-item" href="#four!"><img src="img/bladeRunner.jpg">Blade Runner</a>
-		<a class="carousel-item" href="#five!"><img	src="img/interstellar.jpg">Interstellar</a>
-		<a class="carousel-item" href="#five!"><img	src="img/godfather.jpg">Le Parrain</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/1"><img src="img/deLorean.jpg">Retour vers le futur</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/2"><img src="img/fightClub.jpg">Fight Club</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/3"><img src="img/forestGump.jpg">Forest Gump</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/4"><img src="img/pulpFiction.jpg">Pulp Fiction</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/5"><img src="img/starWars.jpg">L'Empire contre-attaque</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/6"><img src="img/anneau.jpg">Le Seigneur des Anneaux</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/7"><img src="img/batman.jpg">The Dark Knight</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/8"><img src="img/bladeRunner.jpg">Blade Runner</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/9"><img	src="img/interstellar.jpg">Interstellar</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/10"><img src="img/godfather.jpg">Le Parrain</a>
 	</div>
 
 	<div class="container">
 		<h1>Liste des films</h1>
-		<div class="souligne"></div>
+		<div class="souligneEtAjoute">
+			<div class="souligne"></div>
+			<a href="#"><i class="large material-icons">add_circle</i></a>
+		</div>
 
 		<ul class="collapsible" th:each="film:${films}">
 			<li>
 				<div class="collapsible-header">
-					<i class="material-icons">local_movies</i><span th:text="${film.titre}"></span> <span
+					<i class="material-icons" style="color: #555555">local_movies</i><span th:text="${film.titre}"></span> <span
 						class="badge" th:text="${film.annee.year}"
-						style="display: inline-block; background-color: #88ddff; border-radius: .2em; color: #113377;"></span>
+						style="display: inline-block; background-color: rgba(136, 221, 255, .3); border-radius: .2em; color: #113377;"></span>
 				</div>
 				<div class="collapsible-body">
 					<p>
@@ -91,6 +94,7 @@
 					<p th:text="${film.synopsis}">Lorem ipsum</p>
 					<!-- SI MEMBRE OU ADMIN -->
 					<a href="#"><i class="Medium material-icons">mode_edit</i></a>
+					<a th:href="@{'/detail/' + ${film.id}}"><i class="Medium material-icons">remove_red_eye</i></a>
 				</div>
 			</li>
 		</ul>
@@ -122,7 +126,7 @@
 		</div>
 		<div class="footer-copyright">
 			<div class="container">
-				Déveulopped by les non-binaires <a class="orange-text text-lighten-3" href="#">Amilcar & Lewis</a>
+				Déveuloppèd by les non-binaires <a class="orange-text text-lighten-3" href="#">Amilcar & Lewis</a>
 			</div>
 		</div>
 	</footer>

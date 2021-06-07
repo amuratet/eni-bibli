@@ -29,8 +29,9 @@ public class FilmServiceImpl implements FilmService {
 	// =======================================================
 
 	@Override
-	public Film find(Integer idFilm) {
-		return filmDao.findById(idFilm).get();
+	public Film find(Integer id) {
+		return filmDao.findById(id).get();
+//		return filmDao.getById(id);
 	}
 
 	@Override

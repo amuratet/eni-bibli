@@ -7,9 +7,11 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -18,7 +20,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Data
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -44,49 +46,6 @@ public class Film implements Serializable {
 	@Column(name = "titre", nullable = false, length = 255)
 	private String titre;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getTitre() {
-		return titre;
-	}
-
-	public void setTitre(String titre) {
-		this.titre = titre;
-	}
-
-	public LocalDate getAnnee() {
-		return annee;
-	}
-
-	public void setAnnee(LocalDate annee) {
-		this.annee = annee;
-	}
-
-	public Integer getDuree() {
-		return duree;
-	}
-
-	public void setDuree(Integer duree) {
-		this.duree = duree;
-	}
-
-	public String getSynopsis() {
-		return synopsis;
-	}
-
-	public void setSynopsis(String synopsis) {
-		this.synopsis = synopsis;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 
 	@Column(name = "annee", nullable = false)
 	private LocalDate annee;
@@ -101,10 +60,13 @@ public class Film implements Serializable {
 
 	// @ManyToMany(fetch = FetchType.LAZY)
 
-	// @ManyToOne(fetch = FetchType.LAZY)
+//	 @ManyToOne(fetch = FetchType.EAGER)
 	// @JoinColumn(name = "id_genre", referencedColumnName = "id_genre", nullable = false)
+//	private Genre genre;
 	//
 
 	// @ManyToOne(fetch = FetchType.LAZY)
+
+	
 
 }
