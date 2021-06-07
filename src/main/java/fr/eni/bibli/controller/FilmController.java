@@ -55,5 +55,11 @@ public class FilmController {
 		model.addAttribute("films", films);
 		return "liste";
 	}
+	
+	@GetMapping("/film/ajouter")
+	public String ajouer() {
+		System.err.println("dans ajouter");
+		return "ajouterFilm";
+	}
 
 }
