@@ -19,4 +19,11 @@ public interface FilmService {
 	 * @return
 	 */
 	public List<Film> findAll();
+
+	/**
+	 * Ajout d'un film
+	 * 
+	 * @param Film
+	 */
+	public void ajouter(Film film);
 }

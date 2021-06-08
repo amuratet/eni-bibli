@@ -46,7 +46,7 @@ public class Film implements Serializable {
 
 
 	@Column(name = "annee", nullable = false)
-	private LocalDate annee;
+	private Integer annee;
 
 	@Size(min = 1)
 	@Column(name = "duree", nullable = false)

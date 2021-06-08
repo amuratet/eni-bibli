@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,15 +56,15 @@ public class FilmController {
 	}
 	
 	@GetMapping("/film/ajouter")
-	public String ajouer(Model model) {
+	public String ajouter(Model model) {
 		Film film = new Film();
 		model.addAttribute(film);
 		return "ajouterFilm";
 	}
+	
 	@PostMapping("/film/valider")
-	public String valider(Model model) {
-		return null;
-		
+	public String valider(@ModelAttribute("film") Film film) {
+		return "redirect:/liste";
 	}
 
 }

@@ -31,11 +31,17 @@ public class FilmServiceImpl implements FilmService {
 	@Override
 	public Film find(Integer id) {
 		return filmDao.findById(id).get();
-//		return filmDao.getById(id);
 	}
 
 	@Override
 	public List<Film> findAll() {
 		return filmDao.findAll();
 	}
+
+	@Override
+	public void ajouter(Film film) {
+//		filmDao.save(film);
+		filmDao.saveAndFlush(film);
+	}
+	
 }
