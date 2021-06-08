@@ -22,7 +22,7 @@
 	<!-- NAVBAR -->
 	<nav class="deep-purple darken-3" style="height: 7em;">
 		<div class="nav-wrapper">
-			<a href="#" class="notrelogo"><img th:src="@{/icons/notreLogo2.jpg}" alt="logo" /></a>
+			<a th:href="@{/liste}" class="notrelogo"><img th:src="@{/icons/notreLogo2.jpg}" alt="logo" /></a>
 			<ul class="right hide-on-med-and-down">
 				<!-- SI MEMBRE OU ADMIN -->
 				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/enter.png}" alt="se connecter" /></a></li>
@@ -34,22 +34,64 @@
 		</div>
 	</nav>
 
+	<!-- MENU HAMBURGER -->
+	<ul id="slide-out" class="sidenav">
+		<li>
+			<div class="user-view">
+				<a th:href="@{/liste}"><img th:src="@{/icons/notreLogo2.jpg}" width="100" style="border-radius: .5em;"></a>
+			</div>
+		</li>
+		<li><a href="#!"><i class="material-icons">people</i>Qui nous sommes</a></li>
+		<li><a href="#!"><i class="material-icons">person</i>Qui je suis</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="subheader">Nos engagements :</a></li>
+		<li><a href="#!"><i class="material-icons">phone</i>Écoutez moi</a></li>
+		<li><a href="#!"><i class="material-icons">smoke_free</i>Ne fumez pas</a></li>
+		<li><a href="#!"><i class="material-icons">spa</i>Mangez des fleurs</a></li>
+		<li><a href="#!"><i class="material-icons">blur_circular</i></a></li>
+	</ul>
+
+	<a href="#" data-target="slide-out" class="sidenav-trigger menuBurger"><img th:src="@{/icons/list.png}" alt="menu" /></a>
+
+
 	<div class="container containerDetail">
 		<div class="titreFilm">
 			<i class="large material-icons">local_movies</i>
 			<h1 th:text="${film.titre}">Detail</h1>
 			<!-- SI MEMBRE OU ADMIN -->
-			<!-- 			<a href="#"><i class="Medium material-icons iEdit">mode_edit</i></a> -->
 		</div>
+		<div class="row">
+			<div class="col l2 s12 detailIcon">
+				<i class="material-icons">date_range</i>
+				<h2 th:text="${film.annee}">Année</h2>
+			</div>
 
-		<h2 th:text=" '- ' + ${film.annee} + ' -' ">Année</h2>
-		<h2>Synopsis</h2>
+			<div class="col l2 s12 detailIcon">
+				<i class="material-icons">access_time</i>
+				<h2 th:text="${film.duree}">Durée</h2>
+			</div>
+
+			<div class="col l8 s12 detailIcon">
+				<i class="material-icons">style</i>
+				<h2 th:text="${film.genre.libelle}">Genre</h2>
+			</div>
+		</div>
+		
+		<div class="iconH2">
+		<img th:src="@{/icons/conspectus.png}" alt="" />
+			<h2>Synopsis</h2>
+		</div>
 		<h4 th:text="${film.synopsis}"></h4>
-		<h2>Réalisateur</h2>
+		<div class="iconH2">
+			<img th:src="@{/icons/director-chair.png}" alt="" />
+			<h2>Steven Spielberg</h2>
+		</div>
 		<h4 th:text="${film.synopsis}">Réalisateur</h4>
-		<h2>Acteurs</h2>
+		<div class="iconH2">
+		<img th:src="@{/icons/theatre.png}" alt="" />
+			<h2>Acteurs</h2>
+		</div>
 		<h4 th:text="${film.synopsis}">Acteurs</h4>
-
 
 	</div>
 
@@ -60,7 +102,6 @@
 				<div class="col l6 s12">
 					<h5 class="white-text">Uswap inc.</h5>
 				</div>
-
 				<div class="col l3 s12">
 					<h5 class="white-text">©ENI</h5>
 				</div>

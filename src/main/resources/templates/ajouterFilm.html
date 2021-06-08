@@ -32,10 +32,10 @@
 						<input type="text" class="validate" th:field="*{titre}"> <label for="titre">Titre</label>
 					</div>
 					<div class="input-field col s3">
-						<input type="text" class="validate" th:field="*{annee}" value="2011-05-05"> <label for="annee">Date de sortie</label>
+						<input type="text" class="validate" th:field="*{annee}"> <label for="annee">Date de sortie</label>
 					</div>
 					<div class="input-field col s3">
-						<input type="text" class="validate" th:field="*{duree}" value="2011-05-05"> <label for="duree">Durée</label>
+						<input type="text" class="validate" th:field="*{duree}"> <label for="duree">Durée</label>
 					</div>
 				</div>
 
@@ -63,14 +63,11 @@
 					</select> <label for="acteurs">Acteurs</label>
 				</div>
 				
+				
 				<div class="input-field col s12">
-					<select>
+					<select th:field="*{genre}">
 						<option value="" disabled selected></option>
-						<option value="1">Horreur</option>
-						<option value="2">XXX</option>
-						<option value="3">Action</option>
-						<option value="4">Romantique</option>
-						<option value="5">Policier</option>
+						<option th:each="genre : ${genres}" th:value="${genre.id}" th:text="${genre.libelle}" >Horreur</option>
 					</select> <label for="genre">Genre</label>
 				</div>
 

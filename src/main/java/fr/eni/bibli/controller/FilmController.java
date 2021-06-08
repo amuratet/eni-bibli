@@ -2,8 +2,11 @@ package fr.eni.bibli.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,8 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.eni.bibli.entite.Film;
+import fr.eni.bibli.entite.Genre;
 import fr.eni.bibli.service.FilmService;
+import fr.eni.bibli.service.GenreService;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping
 public class FilmController {
@@ -22,19 +29,7 @@ public class FilmController {
 	// =======================================================
 
 	private final FilmService filmService;
-
-	// =======================================================
-	// CONSTRUCTEURS
-	// =======================================================
-
-	public FilmController(FilmService filmService) {
-		super();
-		this.filmService = filmService;
-	}
-
-	// =======================================================
-	// MÉTHODES PUBLIQUES
-	// =======================================================
+	private final GenreService genreService;
 
 	@GetMapping("/")
 	public String accueil() {
@@ -54,16 +49,22 @@ public class FilmController {
 		model.addAttribute("films", films);
 		return "liste";
 	}
-	
+
 	@GetMapping("/film/ajouter")
 	public String ajouter(Model model) {
 		Film film = new Film();
+		List<Genre> genres = genreService.findAll();
 		model.addAttribute(film);
+		model.addAttribute("genres", genres);
 		return "ajouterFilm";
 	}
-	
+
 	@PostMapping("/film/valider")
-	public String valider(@ModelAttribute("film") Film film) {
+	public String valider(@Valid @ModelAttribute("film") Film film, BindingResult result) {
+		if (result.hasErrors()) {
+			return "ajouterFilm";
+		}
+		filmService.ajouter(film);
 		return "redirect:/liste";
 	}
 

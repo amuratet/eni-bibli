@@ -36,11 +36,11 @@
 	</nav>
 	
 	
-
+	<!-- MENU HAMBURGER -->
   <ul id="slide-out" class="sidenav">
     <li>
 	    <div class="user-view">
-	    	<a href="#user"><img th:src="@{/icons/notreLogo2.jpg}" width="100" style="border-radius: .5em;"></a>
+	    	<a th:href="@{/liste}"><img th:src="@{/icons/notreLogo2.jpg}" width="100" style="border-radius: .5em;"></a>
 	    </div>
     </li>
     <li><a href="#!"><i class="material-icons">people</i>Qui nous sommes</a></li>
@@ -75,9 +75,7 @@
 		<h1>Liste des films</h1>
 		<div class="souligneEtAjoute">
 			<div class="souligne"></div>
-<!-- 			<a th:href="@{/film/ajouter}"><i class="large material-icons">add_circle</i></a> -->
 			  <a th:href="@{/film/ajouter}" class="btn-floating btn-large waves-effect waves-light light-blue darken-3"><i class="material-icons">add</i></a>
-			
 		</div>
 
 		<ul class="collapsible" th:each="film:${films}">
@@ -88,6 +86,7 @@
 						style="display: inline-block; background-color: rgba(136, 221, 255, .3); border-radius: .2em; color: #113377;"></span>
 				</div>
 				<div class="collapsible-body">
+				<p th:text="${film.genre.libelle}"></p>
 					<p>
 						<span th:text="${film.duree}"></span> minutes
 					</p>
