@@ -22,3 +22,42 @@ En 2001, quatre millions d''années plus tard, un vaisseau spatial évolue en or
 ('Old Boy', '2003-05-05', '120', 'Après avoir été enlevé et emprisonné durant 15 ans, sans savoir pourquoi, Oh Dae-Su est libéré et recherche les raisons de son enfermement.'),
 ('Mulholland Drive', '2001-05-05', '147', 'A Hollywood, durant la nuit, Rita, une jeune femme, devient amnésique suite à un accident de voiture sur la route de Mulholland Drive. Elle fait la rencontre de Betty Elms, une actrice en devenir qui vient juste de débarquer à Los Angeles. Aidée par celle-ci, Rita tente de retrouver la mémoire ainsi que son identité.'),
 ('Le Voyage de Chihiro', '2001-05-05', '125', 'Lors du déménagement de sa famille, Chihiro, une fillette de 10 ans, erre dans un monde régi par les dieux, sorcières et monstres.');
+
+--Action
+--Animation
+--Aventure
+--Biographique
+--Catastrophe
+--Catastrophe;téléfilm
+--Comédie
+--Comédie Dramatique
+--Comédie Musicale
+--Comédie Policière
+--Comédie Romantique
+--Court Métrage
+--Dessin Animé
+--Documentaire
+--Drame
+--Drame Psychologique
+--Epouvante
+--Erotique
+--XXX
+--Espionnage
+--Essai
+--Fantastique
+--Film à Sketches
+--Film Musical
+--Guerre
+--Historique
+--Horreur
+--Karaté
+--Manga
+--Melodrame
+--Muet
+--Par Parties
+--Péplum
+--Policier
+--Politique
+--Programme
+--Romance
+--Science Fiction

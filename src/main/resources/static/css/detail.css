@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+body {
+  background: #ffffff url("../patterns/double-bubble-outline.png");
+}
+.titreFilm {
+	margin-top: 5em;
+	display: flex;
+	flex-flow: row nowrap;
+}
+.titreFilm a {
+	display: flex;
+	align-items: center;
+}
+.titreFilm i {
+	position: relative;
+	top: .3em;
+	color: #777777;
+}
+i.iEdit {
+	font-size: 3.5em;
+	margin-left: 1em;
+	color: #0277bd;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	color: #555555;
+	font-size: 2em;
+}
+h4 {
+	text-align:justify;
+	font-size: 1.1em;
+	text-indent: 1em;
+	line-height: 1.8em;
+}
+.containerDetail {
+	margin: 5em auto 2em auto;
+	padding: 2em;
+	background-color: #ffffff;
+	border-radius: .7em;
+	box-shadow: 3px 3px 3px rgba(0,0,0, .3);
+}

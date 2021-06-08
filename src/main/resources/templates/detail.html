@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<title>Détail Film</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+
+<!-- CSS  -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" />
+<link th:href="@{/css/style.css}" type="text/css" rel="stylesheet" />
+<link th:href="@{/css/alk.css}" type="text/css" rel="stylesheet" />
+<link th:href="@{/css/detail.css}" type="text/css" rel="stylesheet" />
+
+<title th:text="${film.titre}">Exemple</title>
 </head>
 <body>
 
-	<h1>Detail du film</h1>
-	
-	
-	<h2 th:text="${film.titre}"></h2>
-	
-	
+	<!-- NAVBAR -->
+	<nav class="deep-purple darken-3" style="height: 7em;">
+		<div class="nav-wrapper">
+			<a href="#" class="notrelogo"><img th:src="@{/icons/notreLogo2.jpg}" alt="logo" /></a>
+			<ul class="right hide-on-med-and-down">
+				<!-- SI MEMBRE OU ADMIN -->
+				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/enter.png}" alt="se connecter" /></a></li>
+				<!-- SI MEMBRE OU ADMIN -->
+				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/logout.png}" alt="se déconnecter" /></a></li>
+				<!-- SI MEMBRE OU ADMIN -->
+				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/add-user.png}" alt="s'inscrire" /></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container containerDetail">
+		<div class="titreFilm">
+			<i class="large material-icons">local_movies</i>
+			<h1 th:text="${film.titre}">Detail</h1>
+			<!-- SI MEMBRE OU ADMIN -->
+			<!-- 			<a href="#"><i class="Medium material-icons iEdit">mode_edit</i></a> -->
+		</div>
+
+		<h2 th:text=" '- ' + ${film.annee.year} + ' -' ">Année</h2>
+		<h2>Synopsis</h2>
+		<h4 th:text="${film.synopsis}"></h4>
+		<h2>Réalisateur</h2>
+		<h4 th:text="${film.synopsis}">Réalisateur</h4>
+		<h2>Acteurs</h2>
+		<h4 th:text="${film.synopsis}">Acteurs</h4>
+
+
+	</div>
+
+	<!--  FOOTER -->
+	<footer class="page-footer grey darken-4">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Uswap inc.</h5>
+				</div>
+
+				<div class="col l3 s12">
+					<h5 class="white-text">©ENI</h5>
+				</div>
+				<div class="col l3 s12">
+					<h5 class="white-text">GroupeFBO</h5>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				Déveuloppèd by les non-binaires <a class="orange-text text-lighten-3" href="#">Amilcar & Lewis</a>
+			</div>
+		</div>
+	</footer>
+
+	<!--  Scripts-->
+	<script type="text/javascript" th:src="@{/js/materialize.js}"></script>
+	<script type="text/javascript" th:src="@{/js/init.js}"></script>
+
+
+	<script th:inline="javascript">
+		M.AutoInit();
+	</script>
 
 
 </body>

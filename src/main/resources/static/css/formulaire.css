@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+  background: #ffffff url("../patterns/double-bubble-outline.png");
+}
+
+h1 {
+	font-size: 3em;
+	color: #555555;
+}
+.container {
+}
+.containerDetail {
+	width: 50%;
+	margin: 5em auto 2em auto;
+	padding: 2em;
+	background-color: #ffffff;
+	border-radius: .7em;
+	box-shadow: 3px 3px 3px rgba(0,0,0, .3);
+}
+
+.buttonsform {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+}
+.buttonsform button {
+	margin-left: 2em;
+}
+.buttonsform a, .buttonsform button {
+	min-width: 9em;
+	margin-top: 2em;
+}

@@ -31,10 +31,19 @@ a.connexionIcones img:hover {
 	border: 2px solid rgba(0, 0, 0, .7);
 }
 
+.filmsMieuxNotes {
+	text-align: center;
+	font-size: 2em;
+	color: #555555;
+}
+
 .souligneEtAjoute {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+}
+.souligneEtAjoute a {
+	height: 1em;
 }
 .souligneEtAjoute i {
 	font-size: 3em;
@@ -55,9 +64,10 @@ a.menuBurger {
 	padding: .9em 1em .7em 1em;
 	position: sticky;
 	top: 2em;
-	background: linear-gradient(to bottom right, rgba(200, 200, 200, .5), rgba(100, 100, 100, .5));
+	background: linear-gradient(to bottom right, rgba(255, 255, 255, .5), rgba(100, 100, 100, .5));
 	border-radius: 50%;
 	border: 3px solid rgba(69, 39, 160, .4);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
 }
 a.menuBurger:hover {
 	transition: .4s !important;

@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.eni.bibli.entite.Film;
 import fr.eni.bibli.service.FilmService;
@@ -42,10 +42,8 @@ public class FilmController {
 
 	@GetMapping("/detail/{id}")
 	public String detail(@PathVariable Integer id, Model model) {
-		System.err.println("l'id vaut : " + id);
 		Film film = filmService.find(id);
 		model.addAttribute("film", film);
-		System.err.println(film);
 		return "detail";
 	}
 
@@ -57,9 +55,15 @@ public class FilmController {
 	}
 	
 	@GetMapping("/film/ajouter")
-	public String ajouer() {
-		System.err.println("dans ajouter");
+	public String ajouer(Model model) {
+		Film film = new Film();
+		model.addAttribute(film);
 		return "ajouterFilm";
+	}
+	@PostMapping("/film/valider")
+	public String valider(Model model) {
+		return null;
+		
 	}
 
 }

@@ -13,52 +13,79 @@
 <link th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" />
 <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet" />
 <link th:href="@{/css/alk.css}" type="text/css" rel="stylesheet" />
+<link th:href="@{/css/formulaire.css}" type="text/css" rel="stylesheet" />
 
 <title>Ajouter un film</title>
 </head>
 <body>
 
-	<h1>Ajouter un film</h1>
 
-	<div class="container">
+	<div class="container containerDetail">
 
-		<h2>Quelque choses</h2>
+		<h1>Ajouter un film</h1>
+		<br /> <br />
 
 		<div class="row">
-			<form class="col s12">
+			<form class="col s12" method="post" th:object=${film} th:action="@{/film/valider}">
 				<div class="row">
-					<div class="input-field col s6">
-						<input placeholder="Placeholder" id="first_name" type="text" class="validate"> <label for="first_name">First
-							Name</label>
+					<div class="input-field col s8">
+						<input type="text" class="validate" th:field="*{titre}"> <label for="titre">Titre</label>
 					</div>
-					<div class="input-field col s6">
-						<input id="last_name" type="text" class="validate"> <label for="last_name">Last Name</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input disabled value="I am not editable" id="disabled" type="text" class="validate"> <label
-							for="disabled">Disabled</label>
+					<div class="input-field col s4">
+						<input type="text" class="datepicker" th:field="*{annee}"> <label for="annee">Date de sortie</label>
 					</div>
 				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="password" type="password" class="validate"> <label for="password">Password</label>
-					</div>
+
+				<!-- 				<div class="row"> -->
+				<!-- 					<div class="input-field col s12"> -->
+				<!-- 												<input type="text" class="validate" th:field="*{realisateur}"> <label for="realisateur">Réalisateur</label> -->
+				<!-- 						<input type="text" class="validate"> <label for="realisateur">Réalisateur</label> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+				<!-- 				<div class="row"> -->
+				<!-- 					<div class="input-field col s12"> -->
+				<!-- 												<input type="text" class="validate"  th:field="*{acteurs}"> <label for="password">Acteurs</label> -->
+				<!-- 						<input type="text" class="validate"> <label for="password">Acteurs</label> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+				<!-- 				<div class="row"> -->
+				<!-- 					<div class="input-field col s12"> -->
+				<!-- 												<input type="text" class="validate"  th:field="*{genre}"> <label for="password">Acteurs</label> -->
+				<!-- 						<input type="text" class="validate"> <label for="acteurs">Acteurs</label> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+
+				<div class="input-field col s12">
+					<select>
+						<option value="" disabled selected>Choose your option</option>
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+					</select> <label>Materialize Select</label>
 				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input id="email" type="email" class="validate"> <label for="email">Email</label>
-					</div>
+
+				<div class="input-field col s12">
+					<select multiple>
+						<option value="" disabled selected>Choose your option</option>
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+					</select> <label>Materialize Multiple Select</label>
 				</div>
+
 				<div class="row">
-					<div class="col s12">
-						This is an inline input field:
-						<div class="input-field inline">
-							<input id="email_inline" type="email" class="validate"> <label for="email_inline">Email</label> <span
-								class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+					<div class="row">
+						<div class="input-field col s12">
+							<textarea id="textarea1" class="materialize-textarea"></textarea>
+							<label for="textarea1" th:field="*{synopsis}">Synopsis</label>
 						</div>
 					</div>
+				</div>
+				<div class="buttonsform">
+					<a class="waves-effect waves-light btn pink darken-1" th:href="@{/liste}">Annuler</a>
+					<button class="btn waves-effect waves-light" type="submit" name="action">
+						Ajouter <i class="material-icons right">send</i>
+					</button>
 				</div>
 			</form>
 		</div>
@@ -74,6 +101,6 @@
 	<script th:inline="javascript">
 		M.AutoInit();
 	</script>
-	
+
 </body>
 </html>
