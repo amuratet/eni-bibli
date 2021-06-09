@@ -22,14 +22,14 @@
 
 	<div class="container containerDetail">
 
+ 		<!-- 	ERROR / SUCCES  -->
+	<div>
+		<div class="btn-floating pulse red darken-3" style="width: 70%; display: block; margin: 1em auto; cursor: auto; border-radius: 0.3em; text-align: center; color: white; font-size: 1.5em;" role="alert"
+			th:text="${error}" th:if="${error}">ERROR</div>
+	</div>
+	
 		<h1>Ajouter un film</h1>
 		<br /> <br />
-		
-<!-- 		<!-- 	ERROR / SUCCES --> 
-<!-- 	<div> -->
-<!-- 		<div class="btn-floating pulse teal darken-3" style="width: 90%; display: inline-block; margin: 0 auto; cursor: auto; border-radius: 1em; text-align: center;" role="alert" -->
-<!-- 			th:text="${error}" th:if="${error}">ERROR</div> -->
-<!-- 	</div> -->
 
 		<div class="row">
 			<form class="col s12" method="post" th:object=${film} th:action="@{/film/valider}">
@@ -47,7 +47,7 @@
 
 				<!-- Liste Réalisateurs -->
 				<div class="input-field col s12">
-					<select th:field="*{realisateur}">
+					<select th:field="*{realisateur}" required="required">
 						<option value=""></option>
 						<option th:each="realisateur : ${realisateurs}" th:value="${realisateur.id}" th:text="${realisateur.prenom} + ' ' + ${realisateur.nom} ">Steven Spielberg</option>
 					</select> <label for="realisateur">Realisateur</label>
@@ -55,15 +55,15 @@
 
 				<!-- Liste Acteurs -->
 				<div class="input-field col s12">
-					<select th:field="*{acteurs}" multiple="multiple">
-						<option value=""></option>
+					<select th:field="*{acteurs}" multiple="multiple" required="required">
+						<option value="" disabled="disabled"></option>
 						<option th:each="acteur : ${acteurs}" th:value="${acteur.id}" th:text="${acteur.prenom} + ' ' + ${acteur.nom}">Christopher Lloyd</option>
 					</select> <label for="acteurs">Acteurs</label>
 				</div>
 
 				<!-- Liste Genres -->
 				<div class="input-field col s12">
-					<select th:field="*{genre}">
+					<select th:field="*{genre}" required="required">
 						<option value=""></option>
 						<option th:each="genre : ${genres}" th:value="${genre.id}" th:text="${genre.libelle}">Horreur</option>
 					</select> <label for="genre">Genre</label>

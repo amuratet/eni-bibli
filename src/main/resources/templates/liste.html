@@ -19,27 +19,39 @@
 
 <body>
 
+
+	<!-- <div sec:authorize="isAuthenticated()"> -->
+	<!--   This content is only shown to authenticated users. -->
+	<!-- </div> -->
+	<!-- <div sec:authorize="hasRole('ROLE_ADMIN')"> -->
+	<!--   This content is only shown to administrators. -->
+	<!-- </div> -->
+	<!-- <div sec:authorize="hasRole('ROLE_USER')"> -->
+	<!--   This content is only shown to users. -->
+	<!-- </div> -->
+
 	<!-- NAVBAR -->
 	<nav class="deep-purple darken-3" style="height: 7em;">
 		<div class="nav-wrapper">
 			<a href="#" class="notrelogo"><img th:src="@{/icons/notreLogo2.jpg}" alt="logo" /></a>
 			<ul class="right hide-on-med-and-down">
 				<!-- SI MEMBRE OU ADMIN -->
-				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/enter.png}" alt="se connecter" /></a></li>
+				<li><a th:href="@{/login}" class="connexionIcones"><img th:src="@{/icons/enter.png}" alt="se connecter" /></a></li>
 				<!-- SI MEMBRE OU ADMIN -->
-				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/logout.png}" alt="se déconnecter" /></a></li>
+				<li><a th:href="@{/logout}" class="connexionIcones"><img th:src="@{/icons/logout.png}" alt="se déconnecter" /></a></li>
 				<!-- SI MEMBRE OU ADMIN -->
 				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/add-user.png}" alt="s'inscrire" /></a></li>
 			</ul>
 		</div>
 	</nav>
-	
+
 	<!-- 	ERROR / SUCCES -->
 	<div>
-		<div class="btn-floating pulse teal darken-3" style="width: 90%; display: inline-block; margin: 0 auto; cursor: auto; border-radius: 1em; text-align: center;" role="alert"
-			th:text="${success}" th:if="${success}">SUCCES</div>
+		<div class="btn-floating pulse teal lighten-2"
+			style="width: 15%; display: block; margin: 1em auto; cursor: auto; border-radius: 0.3em; text-align: center; color: #555555; font-size: 1.5em;" role="alert" th:text="${success}"
+			th:if="${success}">SUCCES</div>
 	</div>
-	
+
 	<!-- MENU HAMBURGER -->
 	<ul id="slide-out" class="sidenav">
 		<li>
@@ -63,48 +75,43 @@
 
 
 	<div class="carousel">
-		<a class="carousel-item" href="http://localhost:8080/detail/1"><img th:src="@{/img/deLorean.jpg}">Retour
-			vers le futur</a> <a class="carousel-item" href="http://localhost:8080/detail/2"><img th:src="@{/img/fightClub.jpg}">Fight
-			Club</a> <a class="carousel-item" href="http://localhost:8080/detail/3"><img th:src="@{/img/forestGump.jpg}">Forest
-			Gump</a> <a class="carousel-item" href="http://localhost:8080/detail/4"><img th:src="@{/img/pulpFiction.jpg}">Pulp
-			Fiction</a> <a class="carousel-item" href="http://localhost:8080/detail/5"><img th:src="@{/img/starWars.jpg}">L'Empire
-			contre-attaque</a> <a class="carousel-item" href="http://localhost:8080/detail/6"><img th:src="@{/img/anneau.jpg}">Le
-			Seigneur des Anneaux</a> <a class="carousel-item" href="http://localhost:8080/detail/7"><img
-			th:src="@{/img/batman.jpg}">The Dark Knight</a> <a class="carousel-item" href="http://localhost:8080/detail/8"><img
-			th:src="@{/img/bladeRunner.jpg}">Blade Runner</a> <a class="carousel-item" href="http://localhost:8080/detail/9"><img
-			th:src="@{/img/interstellar.jpg}">Interstellar</a> <a class="carousel-item" href="http://localhost:8080/detail/10"><img
-			th:src="@{/img/godfather.jpg}">Le Parrain</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/1"><img th:src="@{/img/deLorean.jpg}">Retour vers le futur</a> <a class="carousel-item"
+			href="http://localhost:8080/detail/2"><img th:src="@{/img/fightClub.jpg}">Fight Club</a> <a class="carousel-item" href="http://localhost:8080/detail/3"><img
+			th:src="@{/img/forestGump.jpg}">Forest Gump</a> <a class="carousel-item" href="http://localhost:8080/detail/4"><img th:src="@{/img/pulpFiction.jpg}">Pulp Fiction</a> <a
+			class="carousel-item" href="http://localhost:8080/detail/5"><img th:src="@{/img/starWars.jpg}">L'Empire contre-attaque</a> <a class="carousel-item"
+			href="http://localhost:8080/detail/6"><img th:src="@{/img/anneau.jpg}">Le Seigneur des Anneaux</a> <a class="carousel-item" href="http://localhost:8080/detail/7"><img
+			th:src="@{/img/batman.jpg}">The Dark Knight</a> <a class="carousel-item" href="http://localhost:8080/detail/8"><img th:src="@{/img/bladeRunner.jpg}">Blade Runner</a> <a
+			class="carousel-item" href="http://localhost:8080/detail/9"><img th:src="@{/img/interstellar.jpg}">Interstellar</a> <a class="carousel-item"
+			href="http://localhost:8080/detail/10"><img th:src="@{/img/godfather.jpg}">Le Parrain</a>
 	</div>
 
 	<div class="container">
 		<h1>Liste des films</h1>
 		<div class="souligneEtAjoute">
 			<div class="souligne"></div>
-			<a th:href="@{/film/ajouter}" class="btn-floating btn-large waves-effect waves-light light-blue darken-3"><i
-				class="material-icons">add</i></a>
+			<a th:href="@{/film/ajouter}" class="btn-floating btn-large waves-effect waves-light light-blue darken-3"><i class="material-icons">add</i></a>
 		</div>
 
 		<ul class="collapsible" th:each="film:${films}">
 			<li>
 				<div class="collapsible-header">
-					<i class="material-icons" style="color: #555555">local_movies</i><span th:text="${film.titre}"></span> <span
-						class="badge" th:text="${film.annee}"
+					<i class="material-icons" style="color: #555555">local_movies</i><span th:text="${film.titre}"></span> <span class="badge" th:text="${film.annee}"
 						style="display: inline-block; background-color: rgba(136, 221, 255, .3); border-radius: .2em; color: #113377;"></span>
 				</div>
 				<div class="collapsible-body">
 					<p class="iconLibelle">
-					<i class="material-icons">style</i> <span th:text="${film.genre.libelle}" ></span>
+						<i class="material-icons">style</i> <span th:text="${film.genre.libelle}"></span>
 					</p>
 					<p class="iconLibelle">
 						<i class="material-icons">access_time</i> <span th:text="${film.duree}"></span>'
 					</p>
 					<p class="iconLibelle">
-					<img th:src="@{/icons/conspectus.png}" alt="img" style="margin: 0.6em 0.8em 0 0;" /><span th:text="${film.synopsis}"></span>
+						<img th:src="@{/icons/conspectus.png}" alt="img" style="margin: 0.6em 0.8em 0 0;" /><span th:text="${film.synopsis}"></span>
 					</p>
-		
+
 					<!-- SI MEMBRE OU ADMIN -->
-					<a href="#"><i class="Medium material-icons" style="font-size: 2em;">mode_edit</i></a> <a
-						th:href="@{'/detail/' + ${film.id}}"><i class="material-icons" style="font-size: 2em; margin-left: 1em;">remove_red_eye</i></a>
+					<a href="#"><i class="Medium material-icons" style="font-size: 2em;">mode_edit</i></a> <a th:href="@{'/detail/' + ${film.id}}"><i class="material-icons"
+						style="font-size: 2em; margin-left: 1em;">remove_red_eye</i></a>
 				</div>
 			</li>
 		</ul>

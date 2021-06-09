@@ -73,11 +73,11 @@ public class FilmController {
 	@PostMapping("/film/valider")
 	public String valider(@Valid @ModelAttribute("film") Film film, BindingResult result, RedirectAttributes redirAttrs) {
 		if (result.hasErrors()) {
-			redirAttrs.addFlashAttribute("error", "The error XYZ occurred.");
-			return "ajouterFilm";
+			redirAttrs.addFlashAttribute("error", "Vous n'avez pas rempli correctement les champs");
+			return "redirect:/film/ajouter";
 		}
 		filmService.ajouter(film);
-		redirAttrs.addFlashAttribute("success", "Everything went just fine.");
+		redirAttrs.addFlashAttribute("success", "Le film a bien été ajouté");
 		return "redirect:/liste";
 	}
 
