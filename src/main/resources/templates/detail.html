@@ -41,7 +41,7 @@
 				<a th:href="@{/liste}"><img th:src="@{/icons/notreLogo2.jpg}" width="100" style="border-radius: .5em;"></a>
 			</div>
 		</li>
-		<li><a href="#!"><i class="material-icons">people</i>Qui nous sommes</a></li>
+		<li><a th:href="@{/liste}"><i class="material-icons">home</i>Accueil</a></li>
 		<li><a href="#!"><i class="material-icons">person</i>Qui je suis</a></li>
 		<li><div class="divider"></div></li>
 		<li><a class="subheader">Nos engagements :</a></li>
@@ -54,7 +54,23 @@
 	<a href="#" data-target="slide-out" class="sidenav-trigger menuBurger"><img th:src="@{/icons/list.png}" alt="menu" /></a>
 
 
+
+
 	<div class="container containerDetail">
+		<div class="carousel">
+			<a class="carousel-item" href="http://localhost:8080/detail/1"><img th:src="@{/img/deLorean.jpg}">Retour
+				vers le futur</a> <a class="carousel-item" href="http://localhost:8080/detail/2"><img th:src="@{/img/fightClub.jpg}">Fight
+				Club</a> <a class="carousel-item" href="http://localhost:8080/detail/3"><img th:src="@{/img/forestGump.jpg}">Forest
+				Gump</a> <a class="carousel-item" href="http://localhost:8080/detail/4"><img th:src="@{/img/pulpFiction.jpg}">Pulp
+				Fiction</a> <a class="carousel-item" href="http://localhost:8080/detail/5"><img th:src="@{/img/starWars.jpg}">L'Empire
+				contre-attaque</a> <a class="carousel-item" href="http://localhost:8080/detail/6"><img th:src="@{/img/anneau.jpg}">Le
+				Seigneur des Anneaux</a> <a class="carousel-item" href="http://localhost:8080/detail/7"><img
+				th:src="@{/img/batman.jpg}">The Dark Knight</a> <a class="carousel-item" href="http://localhost:8080/detail/8"><img
+				th:src="@{/img/bladeRunner.jpg}">Blade Runner</a> <a class="carousel-item" href="http://localhost:8080/detail/9"><img
+				th:src="@{/img/interstellar.jpg}">Interstellar</a> <a class="carousel-item" href="http://localhost:8080/detail/10"><img
+				th:src="@{/img/godfather.jpg}">Le Parrain</a>
+		</div>
+		<div class="souligneDetail"></div>
 		<div class="titreFilm">
 			<i class="large material-icons">local_movies</i>
 			<h1 th:text="${film.titre}">Detail</h1>
@@ -68,7 +84,7 @@
 
 			<div class="col l2 s12 detailIcon">
 				<i class="material-icons">access_time</i>
-				<h2 th:text="${film.duree}">Durée</h2>
+				<h2 th:text="${film.duree} + '\''">Durée</h2>
 			</div>
 
 			<div class="col l8 s12 detailIcon">
@@ -76,9 +92,9 @@
 				<h2 th:text="${film.genre.libelle}">Genre</h2>
 			</div>
 		</div>
-		
+
 		<div class="iconH2">
-		<img th:src="@{/icons/conspectus.png}" alt="" />
+			<img th:src="@{/icons/conspectus.png}" alt="" />
 			<h2>Synopsis</h2>
 		</div>
 		<h4 th:text="${film.synopsis}"></h4>
@@ -86,12 +102,13 @@
 			<img th:src="@{/icons/director-chair.png}" alt="" />
 			<h2>Steven Spielberg</h2>
 		</div>
-		<h4 th:text="${film.synopsis}">Réalisateur</h4>
+		<!-- 		<h4 th:text="${film.synopsis}">Réalisateur</h4> -->
 		<div class="iconH2">
-		<img th:src="@{/icons/theatre.png}" alt="" />
+			<img th:src="@{/icons/theatre.png}" alt="" />
 			<h2>Acteurs</h2>
 		</div>
-		<h4 th:text="${film.synopsis}">Acteurs</h4>
+		<!-- 		<h4 th:text="${film.synopsis}">Acteurs</h4> -->
+		<h4>John Doe, Jane Pickett, Alexandre le grand, Napoléon</h4>
 
 	</div>
 

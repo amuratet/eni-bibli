@@ -5,7 +5,6 @@ body {
 }
 
 .titreFilm {
-	margin-top: 5em;
 	display: flex;
 	flex-flow: row nowrap;
 }
@@ -29,6 +28,8 @@ i.iEdit {
 
 h1 {
 	text-align: center;
+	font-size: 3em;
+	color: #444444;
 }
 
 h2 {
@@ -44,11 +45,14 @@ h4 {
 }
 
 .containerDetail {
-	margin: 5em auto 2em auto;
+	/* 	margin: 5em auto 2em auto; */
 	padding: 2em;
 	background-color: #ffffff;
 	border-radius: .7em;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	margin-bottom: 2em;
+	position: relative;
+	bottom: 2em;
 }
 
 .detailIcon {
@@ -83,5 +87,9 @@ h4 {
 	margin-right: 0.5em;
 }
 
-
-
+.souligneDetail {
+	height: 2px;
+	padding: 1px;
+	margin: 2.5em 0 2em 0;
+	background: linear-gradient(to right, rgba(69, 39, 160, 0), rgba(69, 39, 160, .5), rgba(69, 39, 160, 1), rgba(69, 39, 160, .5), rgba(69, 39, 160, 0));
+}

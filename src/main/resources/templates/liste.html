@@ -6,8 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
 <!-- CSS  -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,57 +24,59 @@
 		<div class="nav-wrapper">
 			<a href="#" class="notrelogo"><img th:src="@{/icons/notreLogo2.jpg}" alt="logo" /></a>
 			<ul class="right hide-on-med-and-down">
-			<!-- SI MEMBRE OU ADMIN -->
+				<!-- SI MEMBRE OU ADMIN -->
 				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/enter.png}" alt="se connecter" /></a></li>
-			<!-- SI MEMBRE OU ADMIN -->
+				<!-- SI MEMBRE OU ADMIN -->
 				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/logout.png}" alt="se déconnecter" /></a></li>
-			<!-- SI MEMBRE OU ADMIN -->
+				<!-- SI MEMBRE OU ADMIN -->
 				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/add-user.png}" alt="s'inscrire" /></a></li>
 			</ul>
 		</div>
 	</nav>
-	
-	
+
+
 	<!-- MENU HAMBURGER -->
-  <ul id="slide-out" class="sidenav">
-    <li>
-	    <div class="user-view">
-	    	<a th:href="@{/liste}"><img th:src="@{/icons/notreLogo2.jpg}" width="100" style="border-radius: .5em;"></a>
-	    </div>
-    </li>
-    <li><a href="#!"><i class="material-icons">people</i>Qui nous sommes</a></li>
-    <li><a href="#!"><i class="material-icons">person</i>Qui je suis</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Nos engagements :</a></li>
-    <li><a href="#!"><i class="material-icons">phone</i>Écoutez moi</a></li>
-    <li><a href="#!"><i class="material-icons">smoke_free</i>Ne fumez pas</a></li>
-    <li><a href="#!"><i class="material-icons">spa</i>Mangez des fleurs</a></li>
-    <li><a href="#!"><i class="material-icons">blur_circular</i></a></li>
-  </ul>
-  
-  	<a href="#" data-target="slide-out" class="sidenav-trigger menuBurger"><img th:src="@{/icons/list.png}" alt="menu" /></a>
-  	
-  	<h2 class="filmsMieuxNotes">Films les mieux notés</h2>
+	<ul id="slide-out" class="sidenav">
+		<li>
+			<div class="user-view">
+				<a th:href="@{/liste}"><img th:src="@{/icons/notreLogo2.jpg}" width="100" style="border-radius: .5em;"></a>
+			</div>
+		</li>
+		<li><a th:src="@{/liste}"><i class="material-icons">home</i>Accueil</a></li>
+		<li><a href="#!"><i class="material-icons">person</i>Qui je suis</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="subheader">Nos engagements :</a></li>
+		<li><a href="#!"><i class="material-icons">phone</i>Écoutez moi</a></li>
+		<li><a href="#!"><i class="material-icons">smoke_free</i>Ne fumez pas</a></li>
+		<li><a href="#!"><i class="material-icons">spa</i>Mangez des fleurs</a></li>
+		<li><a href="#!"><i class="material-icons">blur_circular</i></a></li>
+	</ul>
+
+	<a href="#" data-target="slide-out" class="sidenav-trigger menuBurger"><img th:src="@{/icons/list.png}" alt="menu" /></a>
+
+	<h2 class="filmsMieuxNotes">Films les mieux notés</h2>
 
 
 	<div class="carousel">
-		<a class="carousel-item" href="http://localhost:8080/detail/1"><img th:src="@{/img/deLorean.jpg}">Retour vers le futur</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/2"><img th:src="@{/img/fightClub.jpg}">Fight Club</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/3"><img th:src="@{/img/forestGump.jpg}">Forest Gump</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/4"><img th:src="@{/img/pulpFiction.jpg}">Pulp Fiction</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/5"><img th:src="@{/img/starWars.jpg}">L'Empire contre-attaque</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/6"><img th:src="@{/img/anneau.jpg}">Le Seigneur des Anneaux</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/7"><img th:src="@{/img/batman.jpg}">The Dark Knight</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/8"><img th:src="@{/img/bladeRunner.jpg}">Blade Runner</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/9"><img	th:src="@{/img/interstellar.jpg}">Interstellar</a>
-		<a class="carousel-item" href="http://localhost:8080/detail/10"><img th:src="@{/img/godfather.jpg}">Le Parrain</a>
+		<a class="carousel-item" href="http://localhost:8080/detail/1"><img th:src="@{/img/deLorean.jpg}">Retour
+			vers le futur</a> <a class="carousel-item" href="http://localhost:8080/detail/2"><img th:src="@{/img/fightClub.jpg}">Fight
+			Club</a> <a class="carousel-item" href="http://localhost:8080/detail/3"><img th:src="@{/img/forestGump.jpg}">Forest
+			Gump</a> <a class="carousel-item" href="http://localhost:8080/detail/4"><img th:src="@{/img/pulpFiction.jpg}">Pulp
+			Fiction</a> <a class="carousel-item" href="http://localhost:8080/detail/5"><img th:src="@{/img/starWars.jpg}">L'Empire
+			contre-attaque</a> <a class="carousel-item" href="http://localhost:8080/detail/6"><img th:src="@{/img/anneau.jpg}">Le
+			Seigneur des Anneaux</a> <a class="carousel-item" href="http://localhost:8080/detail/7"><img
+			th:src="@{/img/batman.jpg}">The Dark Knight</a> <a class="carousel-item" href="http://localhost:8080/detail/8"><img
+			th:src="@{/img/bladeRunner.jpg}">Blade Runner</a> <a class="carousel-item" href="http://localhost:8080/detail/9"><img
+			th:src="@{/img/interstellar.jpg}">Interstellar</a> <a class="carousel-item" href="http://localhost:8080/detail/10"><img
+			th:src="@{/img/godfather.jpg}">Le Parrain</a>
 	</div>
 
 	<div class="container">
 		<h1>Liste des films</h1>
 		<div class="souligneEtAjoute">
 			<div class="souligne"></div>
-			  <a th:href="@{/film/ajouter}" class="btn-floating btn-large waves-effect waves-light light-blue darken-3"><i class="material-icons">add</i></a>
+			<a th:href="@{/film/ajouter}" class="btn-floating btn-large waves-effect waves-light light-blue darken-3"><i
+				class="material-icons">add</i></a>
 		</div>
 
 		<ul class="collapsible" th:each="film:${films}">
@@ -86,14 +87,16 @@
 						style="display: inline-block; background-color: rgba(136, 221, 255, .3); border-radius: .2em; color: #113377;"></span>
 				</div>
 				<div class="collapsible-body">
-				<p th:text="${film.genre.libelle}"></p>
-					<p>
-						<span th:text="${film.duree}"></span> minutes
+					<p class="iconLibelle">
+					<i class="material-icons">style</i> <span th:text="${film.genre.libelle}" ></span>
+					</p>
+					<p class="iconLibelle">
+						<i class="material-icons">access_time</i> <span th:text="${film.duree}"></span>'
 					</p>
 					<p th:text="${film.synopsis}">Lorem ipsum</p>
 					<!-- SI MEMBRE OU ADMIN -->
-					<a href="#"><i class="Medium material-icons" style="font-size: 2em;">mode_edit</i></a>
-					<a th:href="@{'/detail/' + ${film.id}}"><i class="material-icons" style="font-size: 2em; margin-left: 1em;">remove_red_eye</i></a>
+					<a href="#"><i class="Medium material-icons" style="font-size: 2em;">mode_edit</i></a> <a
+						th:href="@{'/detail/' + ${film.id}}"><i class="material-icons" style="font-size: 2em; margin-left: 1em;">remove_red_eye</i></a>
 				</div>
 			</li>
 		</ul>
@@ -140,6 +143,6 @@
 	<script th:inline="javascript">
 		M.AutoInit();
 	</script>
-	
+
 </body>
 </html>

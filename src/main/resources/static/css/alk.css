@@ -6,25 +6,29 @@ body {
 a.notrelogo img {
 	width: 13em;
 	border-radius: .5em;
-/* 	border: 1px solid rgba(100, 100, 100, .5); */
+	/* 	border: 1px solid rgba(100, 100, 100, .5); */
 	margin: 1em 0 0 10em;
 }
+
 a.connexionIcones {
 	padding: 0 !important;
 	margin: 2.8em 1.5em 0 0;
 }
+
 a.connexionIcones:hover {
 	background-color: rgba(100, 100, 100, 0);
 }
+
 a.connexionIcones img {
 	transition: .6s;
 	width: 4em;
 	padding: .5em;
-/* 	margin: 2.2em 2em 0 0; */
+	/* 	margin: 2.2em 2em 0 0; */
 	border-radius: .5em;
 	background-color: rgba(255, 255, 255, 0);
 	border: 2px solid rgba(0, 0, 0, 0);
 }
+
 a.connexionIcones img:hover {
 	transition: .3s;
 	background-color: rgba(255, 255, 255, .3);
@@ -42,18 +46,22 @@ a.connexionIcones img:hover {
 	flex-flow: row wrap;
 	justify-content: space-between;
 }
+
 .souligneEtAjoute a {
 	height: 1em;
 }
+
 .souligneEtAjoute i {
 	font-size: 3em;
 }
+
 .souligne {
 	width: 50%;
 	height: 2px;
 	padding: 1px;
 	margin-bottom: 2em;
-	background: linear-gradient(to right, #eeeeee, #4527a0 5%, #4527a0 40%, #dddddd, #eeeeee);
+	background: linear-gradient(to right, #eeeeee, #4527a0 5%, #4527a0 40%, #dddddd,
+		#eeeeee);
 }
 
 /* MENU HAMBURGER */
@@ -64,15 +72,26 @@ a.menuBurger {
 	padding: .9em 1em .7em 1em;
 	position: sticky;
 	top: 2em;
-	background: linear-gradient(to bottom right, rgba(255, 255, 255, .5), rgba(100, 100, 100, .5));
+	background: linear-gradient(to bottom right, rgba(255, 255, 255, .5),
+		rgba(100, 100, 100, .5));
 	border-radius: 50%;
 	border: 3px solid rgba(69, 39, 160, .4);
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
 }
+
 a.menuBurger:hover {
 	transition: .4s !important;
 	border: 3px solid rgba(69, 39, 160, .9);
 }
+
 a.menuBurger img {
 	width: 2em;
+}
+
+/* LISTE FILMS */
+.iconLibelle i {
+	position: relative;
+	top: 0.3em;
+	font-size: 2rem;
+	color: #4527a0;
 }
