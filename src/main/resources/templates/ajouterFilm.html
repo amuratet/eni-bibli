@@ -43,23 +43,16 @@
 				<div class="input-field col s12">
 					<select th:field="*{realisateur}">
 						<option value=""></option>
-						<option th:each="realisateur : ${realisateurs}" th:value="${realisateur.id}" th:text="${realisateur.prenom} + ${realisateur.nom} ">Steven Spielberg</option>
+						<option th:each="realisateur : ${realisateurs}" th:value="${realisateur.id}" th:text="${realisateur.prenom} + ' ' + ${realisateur.nom} ">Steven Spielberg</option>
 					</select> <label for="realisateur">Realisateur</label>
 				</div>
 
 				<!-- Liste Acteurs -->
 				<div class="input-field col s12">
-					<select multiple>
-						<option value="1">Christopher Lloyd</option>
-						<option value="2">Michael J. Fox</option>
-						<option value="3">Lea Thompson</option>
-						<option value="4">Mark Hamill</option>
-						<option value="5">Harrison Ford</option>
-						<option value="6">Carrie Fisher</option>
-						<option value="7">Peter Mayhew</option>
-						<option value="8">Alec Guinness</option>
-						<option value="9">Olivia Cooke</option>
-						<option value="10">Tye Sheridan</option>
+					<select th:field="*{acteur}" multiple>
+						<option value=""></option>
+						<option th:each="acteur : ${acteurs}" th:value="${acteur.id}" th:text="${acteur.prenom} + ' ' + ${acteur.nom}">Christopher Lloyd</option>
+						
 					</select> <label for="acteurs">Acteurs</label>
 				</div>
 

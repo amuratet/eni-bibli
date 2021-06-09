@@ -1,7 +1,6 @@
 package fr.eni.bibli.entite;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Access;
@@ -30,7 +29,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "FILM")
+@Table(name = "film")
 @Access(AccessType.FIELD)
 public class Film implements Serializable {
 	// =======================================================
@@ -70,9 +69,15 @@ public class Film implements Serializable {
 	@JoinColumn(name = "id_realisateur", referencedColumnName = "id_realisateur", nullable = false)
 	private Realisateur realisateur;
 
-//	@ManyToMany(fetch = FetchType.LAZY)
-//	@Builder.Default
-//	@JoinTable(name = "")
-//	private List<Acteur> acteurs = new ArrayList<Acteur>();
+	// @Builder.Default
+	// @ManyToMany(fetch = FetchType.EAGER)
+	// @JoinTable(name = "film_acteur", joinColumns = { @JoinColumn(name = "id_film", referencedColumnName = "id_film") }, inverseJoinColumns = {
+	// @JoinColumn(name = "id_acteur",
+	// referencedColumnName = "id_acteur") })
+	// private List<Acteur> acteurs = new ArrayList<Acteur>();
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "film_acteur", joinColumns = @JoinColumn(name = "id_film"), inverseJoinColumns = @JoinColumn(name = "id_acteur"))
+	List<Acteur> acteurs;
 
 }

@@ -87,9 +87,25 @@ h4 {
 	margin-right: 0.5em;
 }
 
+.acteur {
+	margin-top: 3em;
+}
+
+.acteur img {
+	top: -0.4em;
+}
+
 .souligneDetail {
 	height: 2px;
 	padding: 1px;
 	margin: 2.5em 0 2em 0;
 	background: linear-gradient(to right, rgba(69, 39, 160, 0), rgba(69, 39, 160, .5), rgba(69, 39, 160, 1), rgba(69, 39, 160, .5), rgba(69, 39, 160, 0));
 }
+
+.acteursTexte {
+	display: inline-block;
+	margin: 0 1.3em 0 0.2em;
+	font-size: 1.5em;	
+	color: #555555;
+}
+

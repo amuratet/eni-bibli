@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import fr.eni.bibli.entite.Acteur;
 import fr.eni.bibli.entite.Film;
 import fr.eni.bibli.entite.Genre;
 import fr.eni.bibli.entite.Realisateur;
+import fr.eni.bibli.service.ActeurService;
 import fr.eni.bibli.service.FilmService;
 import fr.eni.bibli.service.GenreService;
 import fr.eni.bibli.service.RealisateurService;
@@ -33,6 +35,7 @@ public class FilmController {
 	private final FilmService filmService;
 	private final GenreService genreService;
 	private final RealisateurService realisateurService;
+	private final ActeurService acteurService;
 
 	@GetMapping("/")
 	public String accueil() {
@@ -58,12 +61,11 @@ public class FilmController {
 		Film film = new Film();
 		List<Genre> genres = genreService.findAll();
 		List<Realisateur> realisateurs = realisateurService.findAll();
-		model.addAttribute("fieldDisabled", "disabled"); /*Non selectionnable*/
-		model.addAttribute("selected", "selected"); 
-		model.addAttribute("empty", ""); 
+		List<Acteur> acteurs = acteurService.findAll();
 		model.addAttribute(film);
 		model.addAttribute("genres", genres);
 		model.addAttribute("realisateurs", realisateurs);
+		model.addAttribute("acteurs", acteurs);
 		return "ajouterFilm";
 	}
 
