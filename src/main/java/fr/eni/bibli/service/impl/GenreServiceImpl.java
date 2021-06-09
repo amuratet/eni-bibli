@@ -1,7 +1,5 @@
 package fr.eni.bibli.service.impl;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -20,7 +18,7 @@ public class GenreServiceImpl implements GenreService {
 	@Override
 	public List<Genre> findAll() {
 		List<Genre> genres = genreDao.findAll();
-		genres.sort((Genre o1, Genre o2)->o1.getLibelle().toUpperCase().compareTo(o2.getLibelle().toUpperCase()));
+		genres.sort((Genre o1, Genre o2) -> o1.getLibelle().toUpperCase().compareTo(o2.getLibelle().toUpperCase()));
 		return genres;
 	}
 

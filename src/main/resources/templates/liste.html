@@ -93,7 +93,10 @@
 					<p class="iconLibelle">
 						<i class="material-icons">access_time</i> <span th:text="${film.duree}"></span>'
 					</p>
-					<p th:text="${film.synopsis}">Lorem ipsum</p>
+					<p class="iconLibelle">
+					<img th:src="@{/icons/conspectus.png}" alt="img" style="margin: 0.6em 0.8em 0 0;" /><span th:text="${film.synopsis}"></span>
+					</p>
+		
 					<!-- SI MEMBRE OU ADMIN -->
 					<a href="#"><i class="Medium material-icons" style="font-size: 2em;">mode_edit</i></a> <a
 						th:href="@{'/detail/' + ${film.id}}"><i class="material-icons" style="font-size: 2em; margin-left: 1em;">remove_red_eye</i></a>

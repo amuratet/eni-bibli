@@ -1,6 +1,8 @@
 package fr.eni.bibli.entite;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -11,6 +13,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
@@ -58,10 +62,17 @@ public class Film implements Serializable {
 	@Column(name = "synopsis", nullable = false)
 	private String synopsis;
 
-	// @ManyToMany(fetch = FetchType.LAZY)
-
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_genre", referencedColumnName = "id_genre", nullable = false)
 	private Genre genre;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_realisateur", referencedColumnName = "id_realisateur", nullable = false)
+	private Realisateur realisateur;
+
+//	@ManyToMany(fetch = FetchType.LAZY)
+//	@Builder.Default
+//	@JoinTable(name = "")
+//	private List<Acteur> acteurs = new ArrayList<Acteur>();
 
 }

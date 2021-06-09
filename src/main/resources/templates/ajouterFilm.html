@@ -39,15 +39,15 @@
 					</div>
 				</div>
 
+				<!-- Liste Réalisateurs -->
 				<div class="input-field col s12">
-					<select>
-					<option value="" disabled selected></option>
-						<option value="1">Steven Spielberg</option>
-						<option value="2">James Cameron</option>
-						<option value="3">George Lucas</option>
-					</select> <label for="realisateur">Réalisateur</label>
+					<select th:field="*{realisateur}">
+						<option value=""></option>
+						<option th:each="realisateur : ${realisateurs}" th:value="${realisateur.id}" th:text="${realisateur.prenom} + ${realisateur.nom} ">Steven Spielberg</option>
+					</select> <label for="realisateur">Realisateur</label>
 				</div>
 
+				<!-- Liste Acteurs -->
 				<div class="input-field col s12">
 					<select multiple>
 						<option value="1">Christopher Lloyd</option>
@@ -62,12 +62,12 @@
 						<option value="10">Tye Sheridan</option>
 					</select> <label for="acteurs">Acteurs</label>
 				</div>
-				
-				
+
+				<!-- Liste Genres -->
 				<div class="input-field col s12">
 					<select th:field="*{genre}">
-						<option value="" disabled selected></option>
-						<option th:each="genre : ${genres}" th:value="${genre.id}" th:text="${genre.libelle}" >Horreur</option>
+						<option value=""></option>
+						<option th:each="genre : ${genres}" th:value="${genre.id}" th:text="${genre.libelle}">Horreur</option>
 					</select> <label for="genre">Genre</label>
 				</div>
 
