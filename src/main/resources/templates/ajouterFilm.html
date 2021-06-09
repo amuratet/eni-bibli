@@ -24,6 +24,12 @@
 
 		<h1>Ajouter un film</h1>
 		<br /> <br />
+		
+<!-- 		<!-- 	ERROR / SUCCES --> 
+<!-- 	<div> -->
+<!-- 		<div class="btn-floating pulse teal darken-3" style="width: 90%; display: inline-block; margin: 0 auto; cursor: auto; border-radius: 1em; text-align: center;" role="alert" -->
+<!-- 			th:text="${error}" th:if="${error}">ERROR</div> -->
+<!-- 	</div> -->
 
 		<div class="row">
 			<form class="col s12" method="post" th:object=${film} th:action="@{/film/valider}">
@@ -49,10 +55,9 @@
 
 				<!-- Liste Acteurs -->
 				<div class="input-field col s12">
-					<select th:field="*{acteur}" multiple>
+					<select th:field="*{acteurs}" multiple="multiple">
 						<option value=""></option>
 						<option th:each="acteur : ${acteurs}" th:value="${acteur.id}" th:text="${acteur.prenom} + ' ' + ${acteur.nom}">Christopher Lloyd</option>
-						
 					</select> <label for="acteurs">Acteurs</label>
 				</div>
 

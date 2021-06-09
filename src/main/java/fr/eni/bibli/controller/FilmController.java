@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.eni.bibli.entite.Acteur;
 import fr.eni.bibli.entite.Film;
@@ -70,11 +71,13 @@ public class FilmController {
 	}
 
 	@PostMapping("/film/valider")
-	public String valider(@Valid @ModelAttribute("film") Film film, BindingResult result) {
+	public String valider(@Valid @ModelAttribute("film") Film film, BindingResult result, RedirectAttributes redirAttrs) {
 		if (result.hasErrors()) {
+			redirAttrs.addFlashAttribute("error", "The error XYZ occurred.");
 			return "ajouterFilm";
 		}
 		filmService.ajouter(film);
+		redirAttrs.addFlashAttribute("success", "Everything went just fine.");
 		return "redirect:/liste";
 	}
 

@@ -33,8 +33,13 @@
 			</ul>
 		</div>
 	</nav>
-
-
+	
+	<!-- 	ERROR / SUCCES -->
+	<div>
+		<div class="btn-floating pulse teal darken-3" style="width: 90%; display: inline-block; margin: 0 auto; cursor: auto; border-radius: 1em; text-align: center;" role="alert"
+			th:text="${success}" th:if="${success}">SUCCES</div>
+	</div>
+	
 	<!-- MENU HAMBURGER -->
 	<ul id="slide-out" class="sidenav">
 		<li>
