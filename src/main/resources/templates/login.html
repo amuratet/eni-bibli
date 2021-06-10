@@ -21,6 +21,7 @@
 <title>Connection</title>
 </head>
 <body>
+<div class="container containerLogin">
 	<div th:if="${param.error}">
 		Nom d'utilisateur ou mot de passe invalides.
 	</div>
@@ -38,16 +39,16 @@
 			<label> Mot de passe: <input type="password" name="password" />
 			</label>
 		</div>
-		<div>
-			<input type="submit" value="Sign In" />
+		<div class="loginSubmitButton">
+			<input type="submit" value="Connexion" />
 		</div>
 	</form>
 	
+	</div>
 <!-- 	Pour la deconnection -->
 <!--         <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1> -->
 <!--         <form th:action="@{/logout}" method="post"> -->
 <!--             <input type="submit" value="Sign Out"/> -->
 <!--         </form> -->
-	
 </body>
 </html>

@@ -38,7 +38,7 @@
 				<!-- SI MEMBRE OU ADMIN -->
 				<li><a th:href="@{/login}" class="connexionIcones"><img th:src="@{/icons/enter.png}" alt="se connecter" /></a></li>
 				<!-- SI MEMBRE OU ADMIN -->
-				<li><a th:href="@{/logout}" class="connexionIcones"><img th:src="@{/icons/logout.png}" alt="se déconnecter" /></a></li>
+				<li><a th:href="@{/login?logout=true}" class="connexionIcones"><img th:src="@{/icons/logout.png}" alt="se déconnecter" /></a></li>
 				<!-- SI MEMBRE OU ADMIN -->
 				<li><a href="#" class="connexionIcones"><img th:src="@{/icons/add-user.png}" alt="s'inscrire" /></a></li>
 			</ul>
