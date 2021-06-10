@@ -1,4 +1,4 @@
-package securingWeb;
+package fr.eni.bibli.securingWeb;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,20 +27,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-			.antMatchers("/", "/liste").permitAll()
-			.anyRequest().authenticated()
+			.antMatchers("/film/ajouter").authenticated()
+			.anyRequest().permitAll()
 			.and()
 		.formLogin()
-			.loginPage("/login").permitAll()
+			.loginPage("/login")
 			.and()
 		.logout()
 			.permitAll();
 	}
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
 
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
@@ -54,9 +50,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public UserDetailsService userDetailsService(PasswordEncoder encoder) {
 		List<UserDetails> utilisateurs = new ArrayList<>();
 		utilisateurs.add(new User("Lewis", encoder.encode("titi"), Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
+//		utilisateurs.add(new User("Lewis", "titi", Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
 		utilisateurs.add(new User("Amilcar", encoder.encode("tutu"), Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
+//		utilisateurs.add(new User("Amilcar", "tutu", Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
 
 		return new InMemoryUserDetailsManager(utilisateurs);
 	}
 
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }
